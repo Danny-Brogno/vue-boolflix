@@ -1,0 +1,23 @@
+/* GENERAL RULES FOR THE WHOLE PAGE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Dancing Script';
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+/* -------------------------------------------------------------------------- */
