@@ -15,7 +15,6 @@
   --smoke-white: #F5F5F5;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -36,12 +35,12 @@ a {
 li {
   list-style: none;
 }
+
 /* -------------------------------------------------------------------------- */
 
 main div:first-of-type button {
-  margin: 0px;
-  padding: 0px;
   background-color: red;
   width: 100px;
   height: 20px;
+  border: none;
 }

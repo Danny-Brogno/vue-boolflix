@@ -30,11 +30,11 @@
 
         <div>
           <input type="text" name="" value="" placeholder="Search Films" v-model="movieListInput">
-          <button type="button" name="button" @click="apiFun"></button>
+          <button type="button" name="button" @click="apiFun">Button</button>
         </div>
 
-        <div v-for="film in movies">
-          <span>{{ film }}</span>
+        <div v-for="film in filmList">
+          <span>{{ film.title }}</span>
           <span></span>
         </div>
 

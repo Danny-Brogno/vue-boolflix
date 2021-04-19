@@ -14,23 +14,24 @@ function vueInit() {
     el: "#vueDanny",
     data: {
       "movieListInput": "",
-      movies: []
+      "filmList": []
     },
     methods: {
 
       apiFun: function() {
-        axios.get('https://api.themoviedb.org/3/search/movie', {
+        axios.get('https://api.themoviedb.org/3/search/movie',{
           params: {
             "api_key": "5417e301ed04120dd8453bb02047022f",
             "query": this.movieListInput
           }
         })
-      }
-      .then(data => {
-        const film = data.data.results;
-        console.log(film);
-      })
-      .catch(() => console.log("I AM ERRROR"));
+        .then(data => {
+          this.filmList = data.data.results;
+          console.log(this.filmList);
+        })
+        .catch(() => console.log("I AM ERRROR"));
+
+      } // END apiFun
 
     } // END METHODS
 
