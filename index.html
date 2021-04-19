@@ -21,7 +21,7 @@
 
   <body>
 
-    <section class="contenitoreGrande" id="vueDanny">
+    <section class="bigContainer" id="vueDanny">
 
       <header>
       </header>
@@ -29,14 +29,24 @@
       <main>
 
         <div>
-          <input type="text" name="" value="" placeholder="Search Films" v-model="movieListInput">
-          <button type="button" name="button" @click="apiFun">Button</button>
+          <input type="text" name="" value="" placeholder="Search Films" v-model="movieListInput" @keyup.enter="apiFunction">
+          <button type="button" name="button" @click="apiFunction">GO!</button>
         </div>
 
-        <div v-for="film in filmList">
-          <span>{{ film.title }}</span>
-          <span></span>
-        </div>
+        <div v-for="film in filmList" class="container">  <!-- INIZIO DEL CONTENITORE -->
+
+          <div class="box">
+            <span></span>
+            <div class="content">
+              <h2>{{ film.title }}</h2>
+              <p><i>{{ film.original_title }}</i></p>
+              <p>{{ film.original_language }}</p>
+              <img :src="flagFilm[film.original_language]">
+              <p>{{ film.vote_average }}</p>
+            </div>
+          </div>
+
+        </div>  <!-- FINE DEL CONTENITORE -->
 
       </main>
 

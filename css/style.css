@@ -22,7 +22,9 @@
 }
 
 body {
-  background-color: #000;
+  background-image: url(../img/boolflix.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #FFF;
   font-family: 'Dancing Script';
 }
@@ -38,9 +40,128 @@ li {
 
 /* -------------------------------------------------------------------------- */
 
-main div:first-of-type button {
-  background-color: red;
-  width: 100px;
-  height: 20px;
+.bigContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main div:first-of-type {
   border: none;
+}
+
+main div:first-of-type input {
+  width: 500px;
+  margin-top: 10px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+main div:first-of-type button {
+  background-color: var(--roman-red);
+  width: 100px;
+  height: 40px;
+  font-weight: bolder;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  min-height: 350px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 30px;
+  transition: 0.5s;
+}
+
+.box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+  border-radius: 5px;
+}
+
+.box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(30px);
+}
+
+.container .box:nth-child(odd)::before,
+.container .box:nth-child(odd)::after {
+  background: linear-gradient(315deg, var(--darker-yellow), var(--emerald-green));
+}
+
+.container .box:nth-child(even)::before,
+.container .box:nth-child(even)::after {
+  background: linear-gradient(315deg, #00FF7F, #000080);
+}
+
+.box span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.box span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.content {
+  z-index: 3;
+  padding: 20px 40px;
+  text-align: center;
+
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  line-height: 200%;
+}
+
+.content img {
+  width: 30%;
+  height: 30%;
+  padding-bottom: 20px;
 }
