@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FAVICON -->
+  <link rel="icon" sizes="16x16" href="img/favicon.jpg">
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <!-- J QUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- VUE -->
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <!-- AXIOS -->
@@ -17,9 +21,26 @@
 
   <body>
 
-    <div class="contenitoreGrande" id="vueDanny">
+    <section class="contenitoreGrande" id="vueDanny">
 
-    </div><!-- END OF DANNY VUE -->
+      <header>
+      </header>
+
+      <main>
+
+        <div>
+          <input type="text" name="" value="" placeholder="Search Films" v-model="movieListInput">
+          <button type="button" name="button" @click="apiFun"></button>
+        </div>
+
+        <div v-for="film in movies">
+          <span>{{ film }}</span>
+          <span></span>
+        </div>
+
+      </main>
+
+    </section><!-- END OF DANNY VUE -->
 
   </body>
 </html>

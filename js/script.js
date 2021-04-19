@@ -8,22 +8,31 @@ function numberGenerator(min, max) {
 
 // -----------------------------------------------------------------------------
 
-
 function vueInit() {
 
   new Vue({
     el: "#vueDanny",
     data: {
-      
+      "movieListInput": "",
+      movies: []
     },
-    mounted() {
-      axios.get('')
-      .then(data => {
+    methods: {
 
+      apiFun: function() {
+        axios.get('https://api.themoviedb.org/3/search/movie', {
+          params: {
+            "api_key": "5417e301ed04120dd8453bb02047022f",
+            "query": this.movieListInput
+          }
+        })
+      }
+      .then(data => {
+        const film = data.data.results;
+        console.log(film);
       })
       .catch(() => console.log("I AM ERRROR"));
 
-    } // END MOUNTED
+    } // END METHODS
 
   }) // END NEW VUE
 
@@ -31,19 +40,10 @@ function vueInit() {
 
 
 // -----------------------------------------------------------------------------
-
-// Attraverso una chiamata ajax all'API di boolean
-// https://flynn.boolean.careers/exercises/api/array/music
-// avremo a disposizione una decina di dischi musicali.
-// Utilizzando vue, stampiamo a schermo una card per ogni album.
-// BONUS: Creare una select con tutti i generi dei dischi. In base a cosa scegliamo nella select, vedremo i corrispondenti cd.
-// BONUS 2: Ordinare i dischi per anno di uscita.
-
-
-// -----------------------------------------------------------------------------
 function init() {
 
   vueInit();
+
 } // END FUNCTION INIT
 
 document.addEventListener('DOMContentLoaded', init);

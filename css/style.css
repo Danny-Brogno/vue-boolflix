@@ -1,5 +1,21 @@
 /* GENERAL RULES FOR THE WHOLE PAGE */
 
+:root {
+  --roman-red: #CD0000;
+  --scottish-blue: #0065bd;
+  --darker-yellow: #ffaf00;
+  --coral-red: #FF7F50;
+  --emerald-green: #00C957;
+  --slate-blue: #7171C6;
+  --medium-purple: #8968CD;
+  --snow: #8B8989;
+  --midnight-blue: #191970;
+  --aqua: #00FFFF;
+  --light-grey: #4A4A4A;
+  --smoke-white: #F5F5F5;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +23,8 @@
 }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: #000;
+  color: #FFF;
   font-family: 'Dancing Script';
 }
 
@@ -21,3 +37,11 @@ li {
   list-style: none;
 }
 /* -------------------------------------------------------------------------- */
+
+main div:first-of-type button {
+  margin: 0px;
+  padding: 0px;
+  background-color: red;
+  width: 100px;
+  height: 20px;
+}
