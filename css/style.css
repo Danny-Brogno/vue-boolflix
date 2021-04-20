@@ -43,7 +43,6 @@ li {
 
 .bigContainer {
   display: inline-block;
-  height: 100%;
 }
 
 main div:first-of-type {
@@ -73,6 +72,7 @@ main div:first-of-type button {
   justify-content: center;
   align-items: center;
   display: inline-block;
+  flex-wrap: wrap;
 }
 
 .box {
@@ -82,6 +82,7 @@ main div:first-of-type button {
   display: flex;
   justify-content: center;
   margin: 40px 30px 40px 30px;
+  white-space: nowrap;
 }
 
 .films:before,
@@ -146,7 +147,7 @@ main div:first-of-type button {
 }
 
 .content h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .content p {
@@ -159,7 +160,7 @@ main div:first-of-type button {
 }
 
 .content img:last-of-type {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
   border-radius: 10px;
 }
