@@ -13,6 +13,9 @@
   --aqua: #00FFFF;
   --light-grey: #4A4A4A;
   --smoke-white: #F5F5F5;
+  --darker-gray: #515151;
+  --ruby-red: #e0115f;
+  --scarlet-red: #ff2400;
 }
 
 * {
@@ -22,9 +25,7 @@
 }
 
 body {
-  background-image: url(../img/boolflix.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #000;
   color: #FFF;
   font-family: 'Dancing Script';
 }
@@ -41,9 +42,8 @@ li {
 /* -------------------------------------------------------------------------- */
 
 .bigContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  height: 100%;
 }
 
 main div:first-of-type {
@@ -52,6 +52,7 @@ main div:first-of-type {
 
 main div:first-of-type input {
   width: 500px;
+  margin-left: 10px;
   margin-top: 10px;
   height: 40px;
   font-size: 13px;
@@ -68,35 +69,40 @@ main div:first-of-type button {
 /* -------------------------------------------------------------------------- */
 
 .container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  display: inline-block;
 }
 
 .box {
   position: relative;
-  width: 300px;
-  min-height: 350px;
-  color: white;
-  background-color: black;
+  width: 400px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 20px 30px;
-  transition: 0.5s;
+  margin: 40px 30px 40px 30px;
 }
 
-.box:before {
+.films:before,
+.series:before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #ffbc00, #ff0058);
   border-radius: 5px;
+}
+
+.container .box::before,
+.container .box::after {
+  background: linear-gradient(315deg, var(--roman-red), var(--light-grey));
+}
+
+.otherContainer .box::before,
+.otherContainer .box::after {
+  background: linear-gradient(315deg, var(--scottish-blue), var(--darker-gray));
 }
 
 .box:after {
@@ -107,16 +113,7 @@ main div:first-of-type button {
   width: 100%;
   height: 100%;
   filter: blur(30px);
-}
-
-.container .box:nth-child(odd)::before,
-.container .box:nth-child(odd)::after {
-  background: linear-gradient(315deg, var(--darker-yellow), var(--emerald-green));
-}
-
-.container .box:nth-child(even)::before,
-.container .box:nth-child(even)::after {
-  background: linear-gradient(315deg, #00FF7F, #000080);
+  overflow: hidden;
 }
 
 .box span {
@@ -141,27 +138,28 @@ main div:first-of-type button {
 }
 
 .content {
+  max-height: 350px;
   z-index: 3;
-  padding: 20px 40px;
+  padding: 0px 40px;
   text-align: center;
-
+  overflow: hidden;
 }
 
 .content h2 {
   font-size: 1.5rem;
-  color: #FFFFFF;
-  margin-bottom: 10px;
 }
 
 .content p {
   font-size: 1.2rem;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-  line-height: 200%;
 }
 
-.content img {
-  width: 30%;
-  height: 30%;
-  padding-bottom: 20px;
+.content img:first-of-type {
+  width: 10%;
+  height: 10%;
+}
+
+.content img:last-of-type {
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
 }

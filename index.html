@@ -35,7 +35,7 @@
 
         <div v-for="film in filmList" class="container">  <!-- INIZIO DEL CONTENITORE -->
 
-          <div class="box">
+          <div class="box films">
             <span></span>
             <div class="content">
               <h2>{{ film.title }}</h2>
@@ -43,10 +43,33 @@
               <p>{{ film.original_language }}</p>
               <img :src="flagFilm[film.original_language]">
               <p>{{ film.vote_average }}</p>
+              <img :src="'https://image.tmdb.org/t/p/' + 'w342/' + film.poster_path">
             </div>
           </div>
 
         </div>  <!-- FINE DEL CONTENITORE -->
+
+
+        <!-- INIZIO DEL CONTENITORE -->
+
+        <div v-for="serie in series" class="container otherContainer">
+
+          <div class="box series">
+            <span></span>
+            <div class="content">
+              <h2>{{ serie.name }}</h2>
+              <p><i>{{ serie.original_name }}</i></p>
+              <p>{{ serie.original_language }}</p>
+              <img :src="flagFilm[serie.original_language]">
+              <p>{{ serie.vote_average }}</p>
+              <img :src="'https://image.tmdb.org/t/p/' + 'w342/' + serie.poster_path">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FINE DEL CONTENITORE -->
+
 
       </main>
 
