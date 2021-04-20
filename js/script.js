@@ -57,7 +57,7 @@ function vueInit() {
 
       }, // END apiFun
 
-      // THIS FUNCTION IS TO CU THE H2 TEXT IN EACH BOX WHEN IT'S LONGER THAN (CHECK HTML LINE 41)
+      // THIS FUNCTION IS TO CUT THE H2/p TEXT IN EACH BOX WHEN IT'S LONGER THAN (CHECK HTML LINE 41)
       cutText: function (title, length, suffix) { // I pass the name of this funtion inside the {{ }} in HTML and then I pass it the parameters: title, length (decide how long you want the string to be), and then the suffix "..."
         if (title.length > length) {
           return title.substring(0, length) + suffix;

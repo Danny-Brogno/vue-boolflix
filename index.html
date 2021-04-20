@@ -33,45 +33,111 @@
           <button type="button" name="button" @click="apiFunction">GO!</button>
         </div>
 
-        <div v-for="film in films" class="container">  <!-- INIZIO DEL CONTENITORE -->
+        <!-- START OF FILM CONTAINER -->
+
+        <div v-for="film in films" class="container">
 
           <div class="box films">
             <span></span>
             <div class="content">
-              <h2>{{ cutText(film.title, 30, "...") }}</h2>
-              <p><i>{{ film.original_title }}</i></p>
-              <img v-if="flagFilm[film.original_language]" :src="film.srcFlag"> <!-- SEE line 70 of JS -->
-              <p v-else>{{ film.original_language }}</p>
-              <p>{{ film.vote_average }}</p>
-              <img v-if="film.poster_path" :src="'https://image.tmdb.org/t/p/' + 'w342/' + film.poster_path">
-              <img v-else src="img/boolflix.jpg">
-            </div>
-          </div>
 
-        </div>  <!-- FINE DEL CONTENITORE -->
+              <ul>
+
+                <li>
+                  <h2>{{ cutText(film.title, 30, "...") }}</h2>
+                </li>
+
+                <li>
+                  <p><i>{{ cutText(film.original_title, 40, "...") }}</i></p>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <img v-if="flagFilm[film.original_language]" :src="film.srcFlag"> <!-- SEE line 70 of JS -->
+                    <p v-else>{{ film.original_language }}</p>
+                  </a>
+                </li>
+
+                <li>
+                  <p>{{ film.vote_average }}</p>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <img v-if="film.poster_path" :src="'https://image.tmdb.org/t/p/' + 'w342/' + film.poster_path">
+                    <img v-else src="img/boolflix.jpg" id="boolflixLogo">
+                  </a>
+                </li>
+
+                <li>
+                  <ul>
+                    <li>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </li>
 
 
-        <!-- INIZIO DEL CONTENITORE -->
+              </ul>
+
+            </div> <!-- END OF CONTENT -->
+
+          </div> <!-- END OF BOX FILMS -->
+
+        </div>  <!-- END OF CONTAINER -->
+
+
+        <!-- START OF SERIES CONTAINER -->
 
         <div v-for="serie in series" class="container otherContainer">
 
           <div class="box series">
             <span></span>
             <div class="content">
-              <h2>{{ serie.name }}</h2>
-              <p><i>{{ serie.original_name }}</i></p>
-              <img v-if="flagFilm[serie.original_language]" :src="flagFilm[serie.original_language]">
-              <p v-else>{{ serie.original_language }}</p>
-              <p>{{ serie.vote_average }}</p>
-              <img v-if="serie.poster_path":src="'https://image.tmdb.org/t/p/' + 'w342/' + serie.poster_path">
-              <img v-else src="img/boolflix.jpg">
-            </div>
-          </div>
 
-        </div>
+              <ul>
 
-        <!-- FINE DEL CONTENITORE -->
+                <li>
+                  <h2>{{ cutText(serie.name, 30, "...") }}</h2>
+                </li>
 
+                <li>
+                  <p><i>{{ cutText(serie.original_name, 40, "...") }}</i></p>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <img v-if="flagFilm[serie.original_language]" :src="flagFilm[serie.original_language]">
+                    <p v-else>{{ serie.original_language }}</p>
+                  </a>
+                </li>
+
+                <li>
+                  <p>{{ serie.vote_average }}</p>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <img v-if="serie.poster_path" :src="'https://image.tmdb.org/t/p/' + 'w342/' + serie.poster_path">
+                    <img v-else src="img/boolflix.jpg" id="boolflixLogo">
+                  </a>
+                </li>
+
+                <li>
+                  <ul>
+                    <li>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+
+            </div> <!-- END OF CONTENT -->
+
+          </div> <!-- END OF BOX SERIES -->
+
+        </div> <!-- END OF CONTAINER -->
 
       </main>
 

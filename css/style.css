@@ -78,7 +78,7 @@ main div:first-of-type button {
 .box {
   position: relative;
   width: 400px;
-  min-height: 400px;
+  min-height: 450px;
   display: flex;
   justify-content: center;
   margin: 40px 30px 40px 30px;
@@ -139,28 +139,38 @@ main div:first-of-type button {
 }
 
 .content {
-  max-height: 350px;
+  max-height: 390px;
   z-index: 3;
   padding: 0px 40px;
   text-align: center;
-  overflow: hidden;
 }
 
-.content h2 {
+.content ul li h2 {
   font-size: 1.4rem;
 }
 
-.content p {
+.content ul li p {
   font-size: 1.2rem;
 }
 
-.content img:first-of-type {
+.content ul li:nth-child(3) a img {
   width: 10%;
   height: 10%;
 }
 
-.content img:last-of-type {
+.content ul li:nth-child(5) a img {
   width: 60%;
   height: 60%;
+  border-radius: 10px;
+}
+
+.content ul li:nth-child(6) .fa-star {
+  color: var(--darker-yellow);
+  font-size: 20px;
+}
+
+#boolflixLogo {
+  width: 60%;
+  height: 350px;
   border-radius: 10px;
 }
