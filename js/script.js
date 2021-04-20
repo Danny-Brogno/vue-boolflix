@@ -34,6 +34,7 @@ function vueInit() {
         .then(data => {
           this.filmList = data.data.results;
           console.log(this.filmList);
+
           this.movieListInput = "";
         })
         .catch(() => console.log("I AM ERRROR"));
@@ -49,15 +50,30 @@ function vueInit() {
 
           this.series = data.data.results;
           console.log(this.series);
+
           this.movieListInput = "";
         })
         .catch(() => console.log("I AM ERRROR"));
 
-
-
       } // END apiFun
 
-    } // END METHODS
+    }, // END METHODS
+    computed: {
+      films: function() {
+        return this.filmList.map((film)=>{
+
+
+          const movie = {
+            ...film // this is to NOT edit the original vote, we want to translate the vote from 1/10 to 1/5 not modify the vote_average into the array
+          }
+
+          movie.srcFlag = this.flagFilm[film.original_language]; // because we have already accessed the "movie" we can add the flag in teh same way
+          movie.vote_average = Math.ceil(movie.vote_average / 2 );
+          return movie;
+        });
+      } // END FILMS FUNCTION
+
+    } // END COMPUTED
 
   }) // END NEW VUE
 

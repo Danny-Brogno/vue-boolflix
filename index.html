@@ -33,17 +33,18 @@
           <button type="button" name="button" @click="apiFunction">GO!</button>
         </div>
 
-        <div v-for="film in filmList" class="container">  <!-- INIZIO DEL CONTENITORE -->
+        <div v-for="film in films" class="container">  <!-- INIZIO DEL CONTENITORE -->
 
           <div class="box films">
             <span></span>
             <div class="content">
               <h2>{{ film.title }}</h2>
               <p><i>{{ film.original_title }}</i></p>
-              <p>{{ film.original_language }}</p>
-              <img :src="flagFilm[film.original_language]">
+              <img v-if="flagFilm[film.original_language]" :src="film.srcFlag"> <!-- SEE line 70 of JS -->
+              <p v-else>{{ film.original_language }}</p>
               <p>{{ film.vote_average }}</p>
-              <img :src="'https://image.tmdb.org/t/p/' + 'w342/' + film.poster_path">
+              <img v-if="film.poster_path" :src="'https://image.tmdb.org/t/p/' + 'w342/' + film.poster_path">
+              <img v-else src="img/boolflix.jpg">
             </div>
           </div>
 
@@ -62,7 +63,8 @@
               <p>{{ serie.original_language }}</p>
               <img :src="flagFilm[serie.original_language]">
               <p>{{ serie.vote_average }}</p>
-              <img :src="'https://image.tmdb.org/t/p/' + 'w342/' + serie.poster_path">
+              <img v-if="serie.poster_path":src="'https://image.tmdb.org/t/p/' + 'w342/' + serie.poster_path">
+              <img v-else src="img/boolflix.jpg">
             </div>
           </div>
 
