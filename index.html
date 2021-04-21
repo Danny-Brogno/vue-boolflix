@@ -27,10 +27,12 @@
 
         <nav>
 
+          <!-- TOP LEFT LOGO IMG -->
           <div>
             <img :src="boolflixHeader">
           </div>
 
+          <!-- TOP RIGHT INPUT AND BUTTON -->
           <div>
             <input type="text" placeholder="Search Films/Series" v-model="movieListInput" @keyup.enter="apiFunction" v-on:click="disappearingImg">
             <button type="button" name="button" @click="apiFunction">GO!</button>
@@ -42,6 +44,7 @@
 
       <main>
 
+        <!-- MIDDLE SECTION WITH TWO DISAPPEARING IMAGES -->
         <div id="disappearingPic">
           <img :src="greyBackground" v-if="showImage">
           <img :src="boolflixMain" v-if="showImage">

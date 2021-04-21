@@ -82,6 +82,8 @@ nav div:nth-child(2) button {
 
 /* --------------------------MAIN-------------------------------------------- */
 
+/* DISAPPEARING IMAGES */
+
 main {
   position: relative;
 }
@@ -102,6 +104,8 @@ main div:first-of-type img {
   width: 500px;
   height: 200px;
 }
+
+/* -------------------------------------------------------------------------- */
 
 .container {
   display: flex;
