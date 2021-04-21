@@ -87,7 +87,7 @@ function vueInit() {
       }, // END OF getEmptyStar FUNCTION
 
 
-      // THIS MAKES THE CENTRAL IMG DISAPPEAR ON THE CLICK OF THE INPUT
+      // THIS MAKES THE CENTRAL IMAGES DISAPPEAR ON THE CLICK OF THE INPUT
       disappearingImg: function () {
         this.showImage = false;
 
