@@ -45,9 +45,9 @@
       <main>
 
         <!-- MIDDLE SECTION WITH TWO DISAPPEARING IMAGES -->
-        <div id="disappearingPic">
-          <img :src="greyBackground" v-if="showImage">
-          <img :src="boolflixMain" v-if="showImage">
+        <div v-if="showImage" id="disappearingPic">
+          <img :src="greyBackground">
+          <img :src="boolflixMain">
         </div>
 
 
