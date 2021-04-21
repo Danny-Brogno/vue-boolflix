@@ -227,7 +227,7 @@ main div:first-of-type img {
 /* POSTER IMG */
 .content ul li:nth-child(5) a img {
   width: 60%;
-  height: 60%;
+  height: 290px;
   border-radius: 10px;
 }
 
