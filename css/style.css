@@ -80,6 +80,22 @@ nav div:nth-child(2) button {
   border-radius: 5px;
 }
 
+nav div:nth-child(2) div:first-of-type {
+  display: flex;
+}
+
+nav div:nth-child(2) div i,
+nav div:nth-child(2) div p {
+  margin: 5px 10px 10px 0px;
+}
+
+nav div:nth-child(2) div .fa-square:first-of-type {
+  color: var(--roman-red);
+}
+
+nav div:nth-child(2) div .fa-square:last-of-type {
+  color: var(--scottish-blue);
+}
 /* --------------------------MAIN-------------------------------------------- */
 
 /* DISAPPEARING IMAGES */

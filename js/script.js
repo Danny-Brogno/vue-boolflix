@@ -22,7 +22,12 @@ function vueInit() {
       "series":[],
       flagFilm: {
         "en": "./img/uk.png",
-        "it": "./img/ita.png"
+        "it": "./img/ita.png",
+        "es": "./img/es.png",
+        "de": "./img/de.png",
+        "fr": "./img/fr.png",
+        "ja": "./img/ja.png",
+        "ru": "./img/ru.ico"
       }
     },
     methods: {
