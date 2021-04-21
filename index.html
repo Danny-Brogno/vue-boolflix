@@ -21,17 +21,31 @@
 
   <body>
 
-    <section class="bigContainer" id="vueDanny">
+    <section id="vueDanny">
 
       <header>
+
+        <nav>
+
+          <div>
+            <img :src="boolflixHeader">
+          </div>
+
+          <div>
+            <input type="text" name="" value="" placeholder="Search Films/Series" v-model="movieListInput" @keyup.enter="apiFunction">
+            <button type="button" name="button" @click="apiFunction">GO!</button>
+          </div>
+
+        </nav>
+
       </header>
 
       <main>
 
         <div>
-          <input type="text" name="" value="" placeholder="Search Films/Series" v-model="movieListInput" @keyup.enter="apiFunction">
-          <button type="button" name="button" @click="apiFunction">GO!</button>
+          <img :src="boolflixMain">
         </div>
+
 
         <!-- START OF FILM CONTAINER -->
 
@@ -59,7 +73,9 @@
                 </li>
 
                 <li>
-                  <p>{{ film.vote_average }}</p>
+                  <!-- <p>{{ film.vote_average / 2 }}</p> -->
+                  <i v-for="i in getFilledStar(film.vote_average)" class ="fas fa-star"></i>
+                  <i v-for="i in getEmptyStar(film.vote_average)" class ="far fa-star"></i>
                 </li>
 
                 <li>
@@ -68,15 +84,6 @@
                     <img v-else src="img/boolflix.jpg" id="boolflixLogo">
                   </a>
                 </li>
-
-                <li>
-                  <ul>
-                    <li>
-                      <i class="fas fa-star"></i>
-                    </li>
-                  </ul>
-                </li>
-
 
               </ul>
 
@@ -113,7 +120,9 @@
                 </li>
 
                 <li>
-                  <p>{{ serie.vote_average }}</p>
+                  <!-- <p>{{ serie.vote_average / 2 }}</p> -->
+                  <i v-for="i in getFilledStar(serie.vote_average)" class ="fas fa-star"></i>
+                  <i v-for="i in getEmptyStar(serie.vote_average)" class ="far fa-star"></i>
                 </li>
 
                 <li>
@@ -121,14 +130,6 @@
                     <img v-if="serie.poster_path" :src="'https://image.tmdb.org/t/p/' + 'w342/' + serie.poster_path">
                     <img v-else src="img/boolflix.jpg" id="boolflixLogo">
                   </a>
-                </li>
-
-                <li>
-                  <ul>
-                    <li>
-                      <i class="fas fa-star"></i>
-                    </li>
-                  </ul>
                 </li>
 
               </ul>

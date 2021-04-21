@@ -14,6 +14,8 @@ function vueInit() {
     el: "#vueDanny",
     data: {
       "movieListInput": "",
+      "boolflixHeader": "img/header-logo.png",
+      "boolflixMain": "img/boolflix-clean.png",
       "filmList": [],
       "series":[],
       flagFilm: {
@@ -66,6 +68,14 @@ function vueInit() {
         }
 
       }, // END OF cutText FUNCTION (IN METHODS)-----------------------------
+
+      getFilledStar: function(vote) {
+        return Math.ceil(vote / 2);
+      }, // END OF getFilledStar FUNCTION
+
+      getEmptyStar: function(vote) {
+        return 5 - this.getFilledStar(vote);
+      } // END OF getEmptyStar FUNCTION
 
     }, // END METHODS
     computed: {

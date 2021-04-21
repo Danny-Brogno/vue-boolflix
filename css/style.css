@@ -16,6 +16,7 @@
   --darker-gray: #515151;
   --ruby-red: #e0115f;
   --scarlet-red: #ff2400;
+  --seashell-grey: #8B8386;
 }
 
 * {
@@ -39,33 +40,63 @@ li {
   list-style: none;
 }
 
-/* -------------------------------------------------------------------------- */
+/* ----------------------------HEADER---------------------------------------- */
 
-.bigContainer {
-  display: inline-block;
+header {
+  width: 80%;
+  height: 10vh;
+  margin: 0 auto;
 }
 
-main div:first-of-type {
-  border: none;
+header nav div {
+  display: inline
 }
 
-main div:first-of-type input {
+nav div:first-of-type img {
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+nav div:nth-child(2) {
+  float: right;
+  margin-top: 20px;
+}
+
+nav div:nth-child(2) input {
   width: 500px;
-  margin-left: 10px;
-  margin-top: 10px;
   height: 40px;
   font-size: 13px;
   font-weight: bold;
+  border: none;
+  border-radius: 10px;
 }
 
-main div:first-of-type button {
+nav div:nth-child(2) button {
   background-color: var(--roman-red);
   width: 100px;
   height: 40px;
   font-weight: bolder;
+  border-radius: 5px;
 }
 
-/* -------------------------------------------------------------------------- */
+/* --------------------------MAIN-------------------------------------------- */
+
+main {
+  background: var(--seashell-grey);
+  height: 90vh;
+}
+
+main div:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main div:first-of-type img {
+  width: 500px;
+  height: 200px;
+}
 
 .container {
   display: flex;
@@ -83,6 +114,7 @@ main div:first-of-type button {
   justify-content: center;
   margin: 40px 30px 40px 30px;
   white-space: nowrap;
+  transition: 0.5s;
 }
 
 .films:before,
@@ -141,36 +173,47 @@ main div:first-of-type button {
 .content {
   max-height: 390px;
   z-index: 3;
-  padding: 0px 40px;
+  padding: 10px 40px;
   text-align: center;
 }
 
 .content ul li h2 {
   font-size: 1.4rem;
+  padding-bottom: 10px;
 }
 
 .content ul li p {
   font-size: 1.2rem;
+  padding-bottom: 10px;
 }
 
+/* FLAG IMG */
 .content ul li:nth-child(3) a img {
   width: 10%;
   height: 10%;
 }
 
+/* STARS */
+.content ul li:nth-child(4) .fa-star {
+  color: var(--darker-yellow);
+  font-size: 20px;
+}
+
+/* POSTER IMG */
 .content ul li:nth-child(5) a img {
   width: 60%;
   height: 60%;
   border-radius: 10px;
 }
 
-.content ul li:nth-child(6) .fa-star {
-  color: var(--darker-yellow);
-  font-size: 20px;
-}
-
+/* DEFAULT IMG */
 #boolflixLogo {
   width: 60%;
-  height: 350px;
+  height: 290px;
   border-radius: 10px;
+}
+
+/* ON HOVER BOX GOES UP */
+.container .box:hover {
+  transform: translateY(-25px);
 }
