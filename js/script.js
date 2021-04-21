@@ -33,36 +33,47 @@ function vueInit() {
     methods: {
 
       apiFunction: function() {
-        // ----------------FILMS--------------------
-        axios.get('https://api.themoviedb.org/3/search/movie',{
-          params: {
-            "api_key": "5417e301ed04120dd8453bb02047022f",
-            "query": this.movieListInput
-          }
-        })
-        .then(data => {
-          this.filmList = data.data.results;
-          console.log(this.filmList);
 
-          this.movieListInput = "";
-        })
-        .catch(() => console.log("I AM ERRROR"));
-        // ----------------TV--------------------
-        // --------------SERIES------------------
-        axios.get('https://api.themoviedb.org/3/search/tv',{
-          params: {
-            "api_key": "5417e301ed04120dd8453bb02047022f",
-            "query": this.movieListInput
-          }
-        })
-        .then(data => {
+        if (this.movieListInput != "") {
 
-          this.series = data.data.results;
-          console.log(this.series);
+          this.showImage = false;
 
-          this.movieListInput = "";
-        })
-        .catch(() => console.log("I AM ERRROR"));
+          // ----------------FILMS--------------------
+          axios.get('https://api.themoviedb.org/3/search/movie',{
+            params: {
+              "api_key": "5417e301ed04120dd8453bb02047022f",
+              "query": this.movieListInput
+            }
+          })
+          .then(data => {
+            this.filmList = data.data.results;
+            console.log(this.filmList);
+
+            this.movieListInput = "";
+          })
+          .catch(() => console.log("I AM ERRROR"));
+          // ----------------TV--------------------
+          // --------------SERIES------------------
+          axios.get('https://api.themoviedb.org/3/search/tv',{
+            params: {
+              "api_key": "5417e301ed04120dd8453bb02047022f",
+              "query": this.movieListInput
+            }
+          })
+          .then(data => {
+
+            this.series = data.data.results;
+            console.log(this.series);
+
+            this.movieListInput = "";
+          })
+          .catch(() => console.log("I AM ERRROR"));
+
+        } else {
+
+          this.showImage = true;
+
+        } // END OF ELSE
 
       }, // END apiFun
 
@@ -90,13 +101,6 @@ function vueInit() {
       getEmptyStar: function(vote) {
         return 5 - this.getFilledStar(vote);
       }, // END OF getEmptyStar FUNCTION
-
-
-      // THIS MAKES THE CENTRAL IMAGES DISAPPEAR ON THE CLICK OF THE INPUT
-      disappearingImg: function () {
-        this.showImage = false;
-
-      }, // END OF MOVING CONTACTS FUNCTION
 
     }, // END METHODS
 
