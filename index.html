@@ -32,7 +32,7 @@
           </div>
 
           <div>
-            <input type="text" name="" value="" placeholder="Search Films/Series" v-model="movieListInput" @keyup.enter="apiFunction">
+            <input type="text" placeholder="Search Films/Series" v-model="movieListInput" @keyup.enter="apiFunction" v-on:click="disappearingImg">
             <button type="button" name="button" @click="apiFunction">GO!</button>
           </div>
 
@@ -42,8 +42,9 @@
 
       <main>
 
-        <div>
-          <img :src="boolflixMain">
+        <div id="disappearingPic">
+          <img :src="greyBackground" v-if="showImage">
+          <img :src="boolflixMain" v-if="showImage">
         </div>
 
 

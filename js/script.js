@@ -16,6 +16,8 @@ function vueInit() {
       "movieListInput": "",
       "boolflixHeader": "img/header-logo.png",
       "boolflixMain": "img/boolflix-clean.png",
+      "greyBackground": "img/greyBackground.jpg",
+      "showImage": true,
       "filmList": [],
       "series":[],
       flagFilm: {
@@ -59,6 +61,9 @@ function vueInit() {
 
       }, // END apiFun
 
+
+
+
       // THIS FUNCTION IS TO CUT THE H2/p TEXT IN EACH BOX WHEN IT'S LONGER THAN (CHECK HTML LINE 41)
       cutText: function (title, length, suffix) { // I pass the name of this funtion inside the {{ }} in HTML and then I pass it the parameters: title, length (decide how long you want the string to be), and then the suffix "..."
         if (title.length > length) {
@@ -69,15 +74,27 @@ function vueInit() {
 
       }, // END OF cutText FUNCTION (IN METHODS)-----------------------------
 
+
+
+      // THIS ROUNDS UP THE STARS
       getFilledStar: function(vote) {
         return Math.ceil(vote / 2);
       }, // END OF getFilledStar FUNCTION
 
+      // THIS MAKES THE STARS APPEAR (always five menus the vote in the above function)
       getEmptyStar: function(vote) {
         return 5 - this.getFilledStar(vote);
-      } // END OF getEmptyStar FUNCTION
+      }, // END OF getEmptyStar FUNCTION
+
+
+      // THIS MAKES THE CENTRAL IMG DISAPPEAR ON THE CLICK OF THE INPUT
+      disappearingImg: function () {
+        this.showImage = false;
+
+      }, // END OF MOVING CONTACTS FUNCTION
 
     }, // END METHODS
+
     computed: {
       films: function() {
         return this.filmList.map((film) => {
