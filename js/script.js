@@ -21,7 +21,7 @@ function vueInit() {
       "filmList": [],
       "series":[],
       flagFilm: {
-        "en": "./img/flags/uk.png",
+        "en": "./img/flags/en.png",
         "it": "./img/flags/ita.png",
         "es": "./img/flags/es.png",
         "de": "./img/flags/de.png",
